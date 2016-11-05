@@ -1,0 +1,6 @@
+What is 2 * 5 + 2?
+12,13,14,15
+What is the name of the US' national bird?
+Eagle,Turkey,Sparrow,Crow
+Which river runs through Paris?
+Seine,Rhine,Po,Thames
