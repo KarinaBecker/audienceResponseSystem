@@ -1,6 +1,6 @@
-//starts server side and socket
-
-/**
+/** class AServer
+ * Starts server side and socket, needs to be started first
+ *
  * TO DO
  * fix name issue from "Anonymous"
  * GUI: get radio buttons implemented
@@ -20,24 +20,24 @@ public class AServer {
     public static ArrayList<Socket> clientConnections = new ArrayList<Socket>(); //hold connections, so that message to all users
     public static ArrayList<String> clientNames = new ArrayList<String>(); //List of users
 
-    public static void main (String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         int portNumber = 2345;
         boolean listening = true;
         Socket clientSocket = null;
         ServerSocket serverSocket = null;
 
         try {
-            //accept connection to client
+            // Accept connection to client
             serverSocket = new ServerSocket(portNumber);
             System.out.println("Server is now online on port " + portNumber);
-        }catch(IOException e){
+        } catch (IOException e) {
             System.err.println("Exception: couldn't create socket");
             e.printStackTrace();
         }
-        try{
-            //returns new Socket so that server can continue to listen to client requests on original socket
+        try {
+            // Returns new Socket so that server can continue to listen to client requests on original socket
             while (listening) {
-                if (serverSocket == null){
+                if (serverSocket == null) {
                     return;
                 }
                 clientSocket = serverSocket.accept();
@@ -49,7 +49,7 @@ public class AServer {
                 System.out.println("Client names: " + clientNames);
             }
 
-        } catch(IOException e){
+        } catch (IOException e) {
             System.err.println("Exception: couldn't connect to client socket");
             e.printStackTrace();
         }
